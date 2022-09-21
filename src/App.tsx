@@ -1,13 +1,7 @@
-import React from "react";
-import logo from "./logo.svg";
-import styles from "./App.module.scss";
+import RootRouter from "./routes";
 
 function App() {
-  return (
-    <div className={styles.loader}>
-      <h1>Auditor App</h1>
-    </div>
-  );
+  return <RootRouter />;
 }
 
 export default App;
