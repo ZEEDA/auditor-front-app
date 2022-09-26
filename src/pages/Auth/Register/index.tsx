@@ -40,7 +40,7 @@ const RegisterPage = (props: Props) => {
               placeholder="ConfirmPassword"
               name="confirmPassword"
             />
-            <button className="btn btn-primary">Login</button>
+            <button className="btn btn-primary">Sign up</button>
             <Link className="form-link" to="/reset-password">
               Forget password?
             </Link>

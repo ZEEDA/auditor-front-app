@@ -5,7 +5,6 @@ import RegisterPage from "../pages/Auth/Register";
 import HomePage from "../pages/Home";
 import ProtectedRoute from "./protected-routes";
 
-
 type Props = {};
 
 const RootRouter = (props: Props) => {
@@ -16,7 +15,7 @@ const RootRouter = (props: Props) => {
           <Route
             index
             element={
-              <ProtectedRoute currentUser={null}>
+              <ProtectedRoute>
                 <HomePage />
               </ProtectedRoute>
             }

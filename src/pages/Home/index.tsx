@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { AppContext } from "../../contexts";
 
-type Props = {}
+type Props = {};
 
 const HomePage = (props: Props) => {
-  return (
-    <h1>HomePage</h1>
-  )
-}
+  const {
+    state: { auth },
+  } = useContext(AppContext);
+  return (<>
+  <h1>HomePage</h1>
+  <p>Welcome: {auth.userData?.username}</p>
+  </>
+  );
+};
 
-export default HomePage
+export default HomePage;

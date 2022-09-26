@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Navigate } from "react-router-dom";
+import { AppContext } from "../contexts";
 
 type Props = {
-  currentUser: {
-    name: string;
-    token: string;
-  } | null;
   children: JSX.Element;
 };
 
-const ProtectedRoute: React.FC<Props> = ({ currentUser, children }) => {
-  if (!currentUser) {
-    return <Navigate to="/login" />;
+const ProtectedRoute: React.FC<Props> = ({ children }) => {
+  const {
+    state: { auth },
+    dispatch,
+  } = useContext(AppContext);
+
+  
+  useEffect(() => {
+    console.log("Protected Routes: ", auth);
+    return () => {
+      
+    }
+  }, [auth])
+  
+  if (!!auth.token) {
+    return children;
   }
-  return children;
+  return <Navigate to="/login" />;
 };
 
 export default ProtectedRoute;
