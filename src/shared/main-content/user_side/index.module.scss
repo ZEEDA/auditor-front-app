@@ -1,0 +1,23 @@
+.user_side {
+  position: fixed;
+  flex-basis: 280px;
+  width: 280px;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: auto;
+
+  transform: translateX(150%);
+  transition: transform 400ms ease-in-out;
+
+  @media (min-width: 992px) {
+    position: sticky;
+    flex-basis: 280px;
+    width: 280px;
+    transform: translate(0, 0);
+  }
+}

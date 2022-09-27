@@ -1,5 +1,5 @@
 import userEvent from "@testing-library/user-event";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AppContext } from "../../../contexts";
 import { User } from "../../../models/user";
@@ -16,12 +16,18 @@ const LoginPage = () => {
     state: { auth },
     dispatch,
   } = useContext(AppContext);
-  const { state } = useContext(AppContext);
+
+  useEffect(() => {
+    if (!!auth.token) {
+      navigate("/");
+    }
+    return () => {};
+  }, [auth]);
+
   const [formData, setFormData] = useState<LoginFormType>({
     username: "",
     password: "",
   });
-
   const handleLogin = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {

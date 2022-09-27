@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginPage from "../pages/Auth/Login";
 import RegisterPage from "../pages/Auth/Register";
 import HomePage from "../pages/Home";
+
 import ProtectedRoute from "./protected-routes";
 
 type Props = {};
