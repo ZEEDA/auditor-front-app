@@ -16,7 +16,7 @@ const UserInfo = (props: Props) => {
         </div>
       </div>
       <div className={styles.user_info_actions}>
-        <button className={styles.user_info_actions_edit}>Edit my profile</button>
+        <button className={`btn ${styles.user_info_actions_edit}`}>Edit my profile</button>
       </div>
     </div>
   );

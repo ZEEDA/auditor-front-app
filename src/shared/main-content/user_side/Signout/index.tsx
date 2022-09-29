@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../../../../contexts";
+import { SIGN_OUT } from "../../../../utils/strings";
 import styles from "./index.module.scss";
 type Props = {};
 
 const SignOut = (props: Props) => {
+  const { dispatch } = useContext(AppContext);
+  const handleSignout = () => {dispatch({ type: SIGN_OUT })};
   return (
     <div className={styles.signout_wrapper}>
       <span className={styles.text}>Sign Out</span>
-      <button className={styles.action}>
+      <button className={styles.action} onClick={handleSignout}>
         <span className="icon">
           <svg
             width="16"

@@ -1,0 +1,31 @@
+.welcome_section {
+  width: 100%;
+  margin-top: 32px;
+  background: #e8e5f7;
+  border-radius: 16px;
+  position: relative;
+  .charachter{
+    height: calc(100% + 64px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .inner_text{
+    padding: 16px;
+    max-width: 60%;
+    .title{
+        color: var(--dark-color);
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 0 10px;
+    }
+    .description{
+        margin: 0;
+        font-size: 16px;
+    }
+    .cto{
+        margin-top: 32px;
+        padding: 0 32px;
+    }
+  }
+}

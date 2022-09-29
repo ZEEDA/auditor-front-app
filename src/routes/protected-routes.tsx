@@ -1,29 +1,22 @@
 import React, { useContext, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet, Route } from "react-router-dom";
 import { AppContext } from "../contexts";
+import LayoutAside from "../layout/layout-aside";
 
 type Props = {
-  children: JSX.Element;
+  // children: React.ReactNode;
 };
 
-const ProtectedRoute: React.FC<Props> = ({ children }) => {
+const ProtectedRoute: React.FC<Props> = ({}) => {
   const {
     state: { auth },
-    dispatch,
   } = useContext(AppContext);
 
-  
-  useEffect(() => {
-    console.log("Protected Routes: ", auth);
-    return () => {
-      
-    }
-  }, [auth])
-  
-  if (!!auth.token) {
-    return children;
-  }
-  return <Navigate to="/login" />;
+  return !!auth.token ? <Outlet /> : <Navigate to="/login" />;
+  // if (!!auth.token) {
+  //   return <Navigate to="/dashboard" />;
+  // }
+  // return <Navigate to="/login" />;
 };
 
 export default ProtectedRoute;

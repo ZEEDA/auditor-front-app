@@ -21,22 +21,29 @@
   --text-color-light: #a0a0a0;
   --light-color: #fff;
   --dark-color: #101010;
-  --border-color: #ddd;
+  --border-color: #e4e4e4;
   --bg-color: #f5f5fb;
   --bg-color-600: #e5e5eb;
 
   --main-side-width: 205px;
   --sidebar-text-color: #a2a2c3;
 
-  --btn-default-color: #E8E8ED;
+  --btn-default-color: #e8e8ed;
   --btn-primary-color: var(--third-color);
   --btn-secondary-color: var(--seconadry-color);
   --btn-radius-sm: 4px;
   --btn-radius-md: 16px;
   --btn-radius-lg: 25px;
 
+  --task-new-color: var(--third-color);
+  --task-active-color: #ffe600;
+  --task-active-color-shade: #f3bb06;
+  --task-done-color: #a5f597;
+  --task-done-color-shade: #23c806;
+  --task-missed-color: #fb8686;
+  --task-missed-color-shade: #cb0606;
 }
-
+@import "~react-datepicker/dist/react-datepicker.css";
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -116,9 +123,13 @@ code {
   font-weight: 600;
   border-radius: var(--btn-radius-lg);
   cursor: pointer;
+  transition: all 300ms ease-in;
   &-primary {
-    background-color: var(--primary-color);
+    background-color: var(--third-color);
     color: var(--light-color);
+  }
+  &:hover{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 4px 8px rgba(0, 0, 0, 0.12);
   }
 }
 
@@ -158,5 +169,35 @@ input {
   &:active,
   &:focus {
     border-color: var(--third-color);
+  }
+}
+
+.main-nav .main-item a.active {
+  color: var(--dark-color);
+  svg {
+    path {
+      stroke: var(--third-color) !important;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 3px;
+    height: 20px;
+    background-color: var(--third-color);
+  }
+}
+.iconic-input{
+  position: relative;
+  input{
+    padding-inline-start: 48px;
+  }
+  .icon{
+    position: absolute;
+    left: 16px;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
