@@ -1,10 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AppContext } from "../../../contexts";
 import AuthLayout from "../layout";
 
 type Props = {};
 
 const RegisterPage = (props: Props) => {
+  // const navigate = useNavigate();
+  // const {
+  //   state: { auth },
+  //   dispatch,
+  // } = useContext(AppContext);
+  // useEffect(() => {
+  //   if (!!auth.token) {
+  //     navigate("/");
+  //   }
+  //   return () => {};
+  // }, [auth]);
+
   return (
     <AuthLayout>
       <>

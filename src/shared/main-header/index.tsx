@@ -6,7 +6,10 @@ type Props = {
   title: string;
 };
 
-const MainHeader: React.FC<Props> = ({title}) => {
+const MainHeader: React.FC<Props> = ({ title }) => {
+  const handleToggleSideBar = () => {
+    document.body.classList.add('show_user_side')
+  };
   return (
     <div className={styles.page_header}>
       <div className={styles.page_title}>
@@ -14,7 +17,7 @@ const MainHeader: React.FC<Props> = ({title}) => {
       </div>
       <div className={styles.header_actions}>
         <span className={styles.date}>25 AUG 2022, Thursday</span>
-        <button className={styles.toggle_btn}>
+        <button className={styles.toggle_btn} onClick={handleToggleSideBar}>
           <img src={userImg} alt="Toggle Menu" />
         </button>
       </div>

@@ -8,8 +8,8 @@ export type ActionType = {
   payload: any;
 };
 export type AuthReducerType = {
-  token: string | null;
-  userData: User | null;
+  token: string | null | undefined;
+  userData: User | null | undefined;
 };
 export type StateType = {
   auth: AuthReducerType;
@@ -17,8 +17,8 @@ export type StateType = {
 
 const initialState = {
   auth: {
-    token: null,
-    userData: null,
+    token: undefined,
+    userData: undefined,
   },
 };
 

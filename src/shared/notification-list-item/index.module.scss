@@ -1,0 +1,27 @@
+.notif_item{
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    background-color: var(--border-color);
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    .icon{
+        margin-inline-end: 8px;
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .title{
+        margin: 0;
+    }
+    .date{
+        margin-inline-start: auto;
+    }
+    &.new{
+        border-color: var(--third-color);
+        cursor: pointer;
+        background-color: var(--light-color);
+    }
+}

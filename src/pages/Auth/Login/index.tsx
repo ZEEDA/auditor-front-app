@@ -16,13 +16,12 @@ const LoginPage = () => {
     state: { auth },
     dispatch,
   } = useContext(AppContext);
-
-  useEffect(() => {
-    if (!!auth.token) {
-      navigate("/");
-    }
-    return () => {};
-  }, [auth]);
+  // useEffect(() => {
+  //   if (!!auth.token) {
+  //     navigate("/");
+  //   }
+  //   return () => {};
+  // }, [auth]);
 
   const [formData, setFormData] = useState<LoginFormType>({
     username: "",
