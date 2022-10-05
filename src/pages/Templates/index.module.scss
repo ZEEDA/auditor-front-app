@@ -1,0 +1,18 @@
+.add_new{
+    background-color: #ECF5FA;
+    border: 1px solid var(--third-color);
+    border-radius: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 57px;
+    .icon{
+        font-size: 22px;
+        margin-inline-end: 8px;
+    }
+    &:hover{
+        border-color: rgba(#008ae0, 0.01);
+        box-shadow: 0 2px 4px rgba(#008ae0, 0.3), 0 16px 45px rgba(#008ae0, 0.16);
+    }
+}
