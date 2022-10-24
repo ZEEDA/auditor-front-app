@@ -1,0 +1,81 @@
+// .container {
+//   // max-width: 650px;
+//   // margin: auto;
+// }
+.pageTitle {
+  padding: 0 32px;
+  .title {
+    margin: 32px 0;
+    font-size: 18px;
+  }
+}
+.innerContent {
+  .title {
+    font-size: 16px;
+    padding-bottom: 8px;
+    margin: auto;
+  }
+}
+.templateInfoWrapper {
+  padding: 0 32px;
+  .innerContent {
+    background-color: var(--light-color);
+    padding: 32px 16px;
+    border-radius: 16px;
+  }
+  .editableInputWrapper {
+    .title {
+      margin: 0;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--text-color);
+      font-size: 14px;
+    }
+    .editableInput {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      .formControl {
+        border-radius: 12px;
+        height: 54px;
+        width: 100%;
+        padding-inline-end: 82px;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 100%;
+        height: calc(100% - 10px);
+        .inputSave {
+          padding: 6px 12px;
+          font-size: 14px;
+          font-weight: 400;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          line-height: 16px;
+          border-radius: 8px;
+          height: 100%;
+          .icon{
+            height: 16px;
+            svg{
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+        
+      }
+    }
+  }
+}

@@ -5,9 +5,10 @@ import LayoutAside from "../layout/layout-aside";
 import LoginPage from "../pages/Auth/Login";
 import RegisterPage from "../pages/Auth/Register";
 import HomePage from "../pages/Home";
-import InspectionsPage from "../pages/Inspections";
+import InspectionsPage from "../pages/Inspections/index";
 import NotificationsPage from "../pages/Notifications";
 import TemplatesPage from "../pages/Templates";
+import AddTemplate from "../pages/Templates/add";
 import ProtectedRoute from "./protected-routes";
 
 type Props = {
@@ -52,6 +53,7 @@ const RootRouter: React.FC<Props> = ({ auth }) => {
               </LayoutAside>
             }
           />
+          <Route path="templates/add" element={<AddTemplate />} />
         </Route>
         <Route
           path="/login"

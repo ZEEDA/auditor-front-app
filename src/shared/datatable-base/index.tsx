@@ -42,8 +42,8 @@ function DataTableBase<T>(props: TableProps<T>): JSX.Element {
     },
     cells: {
       style: {
-        fontSize: "16px",
-        color: "var(--text-color)",
+        fontSize: "0.875rem",
+        // color: "var(--text-color)",
       },
     },
   };
