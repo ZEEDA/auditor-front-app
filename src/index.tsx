@@ -1,9 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import 'antd/dist/antd.variable.min.css';
 import "./main.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AppProvider } from "./contexts";
+import { ConfigProvider } from "antd";
+
+ConfigProvider.config({
+  theme: {
+    primaryColor: '#008ae0',
+  },
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -11,7 +19,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <AppProvider>
-      <App />
+      <ConfigProvider direction="rtl">
+        <App />
+      </ConfigProvider>
     </AppProvider>
   </React.StrictMode>
 );

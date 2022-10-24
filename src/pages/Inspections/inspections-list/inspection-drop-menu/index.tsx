@@ -1,11 +1,4 @@
-import {
-  Button,
-  Divider,
-  ListItemIcon,
-  ListItemText,
-  Menu,
-  MenuItem,
-} from "@mui/material";
+import { Button } from "antd";
 import React from "react";
 import { InspectionRowData } from "../index";
 
@@ -63,7 +56,7 @@ const InspectionDropMenu: React.FC<Props> = ({ row }) => {
           />
         </svg>
       </Button>
-      <Menu
+      {/* <Menu
         id="template-positioned-menu"
         aria-labelledby="template-more-button"
         anchorEl={anchorEl}
@@ -227,7 +220,7 @@ const InspectionDropMenu: React.FC<Props> = ({ row }) => {
           </ListItemIcon>
           Manage access
         </MenuItem>
-      </Menu>
+      </Menu> */}
     </div>
   );
 };
