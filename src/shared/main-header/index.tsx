@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./index.module.scss";
 import userImg from "../../assets/images/svg/user.svg";
+import ZThemeSwitcher from "../zthemeswitcher";
 
 type Props = {
   title: string;
@@ -8,7 +9,7 @@ type Props = {
 
 const MainHeader: React.FC<Props> = ({ title }) => {
   const handleToggleSideBar = () => {
-    document.body.classList.add('show_user_side')
+    document.body.classList.add("show_user_side");
   };
   return (
     <div className={styles.page_header}>
@@ -20,6 +21,7 @@ const MainHeader: React.FC<Props> = ({ title }) => {
         <button className={styles.toggle_btn} onClick={handleToggleSideBar}>
           <img src={userImg} alt="Toggle Menu" />
         </button>
+        <ZThemeSwitcher />
       </div>
     </div>
   );

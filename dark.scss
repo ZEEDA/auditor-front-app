@@ -1,0 +1,51 @@
+[theme="dark"]{
+    --primary-color: #00baf2;
+    --primary-color-shade: #01a4d6;
+  
+    --secondary-color: #1b1c4b;
+    --secondary-color-light: #192f50;
+    --secondary-color-shade: #111138;
+  
+  
+    --success-color: #00c609;
+    --success-color-shade: #02b10b;
+    --success-color-light: #85e18a;
+  
+    --danger-color: #dc3545;
+    --danger-color-shade: #b62634;
+  
+    --text-color: #b6babd;
+    --text-color-light: #cacfd3;
+    --light-color: #161621;
+    --dark-color: #dee2e6;
+    --border-color: #3b3b47;
+    --bg-color: #242430;
+    --bg-color-600: #12121b;
+  
+    --main-side-width: 205px;
+    --sidebar-text-color: #b6b6ca;
+    
+    --btn-don-bg: #646483;
+    --btn-don-border: #a2a2c3;
+        
+    --welcome-bg-color: #40405a;
+    --add-btn-bg-color: #414547;
+    --add-btn-border: var(--primary-color-shade);
+    --add-btn-shadow: 0 2px 4px rgba(25, 32, 34, 0.8),
+    0 16px 45px rgba(25, 32, 34, 0.6);
+
+    --btn-default-color: #5a5a61;
+    --btn-primary-color: var(--primary-color);
+    --btn-secondary-color: var(--seconadry-color);
+    --btn-radius-sm: 4px;
+    --btn-radius-md: 16px;
+    --btn-radius-lg: 25px;
+  
+    --task-new-color: var(--primary-color);
+    --task-active-color: #ffe600;
+    --task-active-color-shade: #f3bb06;
+    --task-done-color: #a5f597;
+    --task-done-color-shade: #23c806;
+    --task-missed-color: #fb8686;
+    --task-missed-color-shade: #cb0606;  
+  }

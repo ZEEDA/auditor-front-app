@@ -1,6 +1,6 @@
 .add_new{
-    background-color: #ECF5FA;
-    border: 1px solid var(--third-color);
+    background-color: var(--add-btn-bg-color);
+    border: 1px solid var(--add-btn-border);
     border-radius: 10px;
     font-size: 18px;
     display: flex;
@@ -15,6 +15,6 @@
     }
     &:hover{
         border-color: rgba(#008ae0, 0.01);
-        box-shadow: 0 2px 4px rgba(#008ae0, 0.3), 0 16px 45px rgba(#008ae0, 0.16);
+        box-shadow: var(--add-btn-shadow);
     }
 }

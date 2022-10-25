@@ -1,7 +1,8 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import auth from "../api/auth";
 import { User } from "../models/user";
 import authReducer from "./auth";
+import themeReducer from "./theme";
 
 export type ActionType = {
   type: string;
@@ -13,6 +14,7 @@ export type AuthReducerType = {
 };
 export type StateType = {
   auth: AuthReducerType;
+  theme: string;
 };
 
 const initialState = {
@@ -20,6 +22,7 @@ const initialState = {
     token: undefined,
     userData: undefined,
   },
+  theme: "Light",
 };
 
 const AppContext = createContext<{
@@ -32,6 +35,7 @@ const mainReducer = (state: StateType, action: ActionType) => {
 
   return {
     auth: authReducer(state.auth, action),
+    theme: themeReducer(state.theme, action),
   };
 };
 

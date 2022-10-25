@@ -6,16 +6,12 @@
 @import "@fontsource/poppins/800.css";
 
 :root {
-  --primary-color: #fcb806;
-  --primary-color-shade: #ff9900;
-  --primary-color-light: #ffdc97;
+  --primary-color: #00baf2;
+  --primary-color-shade: #01a4d6;
 
   --secondary-color: #1b1c4b;
   --secondary-color-light: #192f50;
   --secondary-color-shade: #111138;
-
-  --third-color: #00baf2;
-  --third-color-shade: #01a4d6;
 
   --success-color: #00c609;
   --success-color-shade: #02b10b;
@@ -34,15 +30,24 @@
 
   --main-side-width: 205px;
   --sidebar-text-color: #a2a2c3;
+  
+  --btn-don-bg: #dedef5;
+  --btn-don-border: #a2a2c3;
+
+  --welcome-bg-color: #e8e5f7;
+  --add-btn-bg-color: #ecf5fa;
+  --add-btn-border: var(--primary-color);
+  --add-btn-shadow: 0 2px 4px rgba(0, 138, 224, 0.3),
+    0 16px 45px rgba(0, 138, 224, 0.16);
 
   --btn-default-color: #e8e8ed;
-  --btn-primary-color: var(--third-color);
+  --btn-primary-color: var(--primary-color);
   --btn-secondary-color: var(--seconadry-color);
   --btn-radius-sm: 4px;
   --btn-radius-md: 16px;
   --btn-radius-lg: 25px;
 
-  --task-new-color: var(--third-color);
+  --task-new-color: var(--primary-color);
   --task-active-color: #ffe600;
   --task-active-color-shade: #f3bb06;
   --task-done-color: #a5f597;
@@ -50,11 +55,10 @@
   --task-missed-color: #fb8686;
   --task-missed-color-shade: #cb0606;
 }
+
+@import "./dark.scss";
 @import "~react-datepicker/dist/react-datepicker.css";
 body {
-  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-  // "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  //   sans-serif;
   font-family: "Poppins", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -76,8 +80,8 @@ h5,
 h5,
 span,
 button,
-label,
-* {
+label, .rdt_TableCell, .rdt_TableCol {
+  color: var(--dark-color);
   box-sizing: border-box;
   font-family: "Poppins", sans-serif !important;
 }
@@ -144,7 +148,7 @@ code {
   cursor: pointer;
   transition: all 300ms ease-in;
   &-primary {
-    background-color: var(--third-color);
+    background-color: var(--primary-color);
     color: var(--light-color);
   }
   &:hover {
@@ -177,6 +181,7 @@ code {
 }
 
 input {
+  background-color: var(--light-color);
   border: 1px solid var(--border-color);
   padding: 4px 12px;
   height: 40px;
@@ -187,7 +192,7 @@ input {
   }
   &:active,
   &:focus {
-    border-color: var(--third-color);
+    border-color: var(--primary-color);
   }
 }
 
@@ -195,7 +200,7 @@ input {
   color: var(--dark-color);
   svg {
     path {
-      stroke: var(--third-color) !important;
+      stroke: var(--primary-color) !important;
     }
   }
   &::after {
@@ -204,7 +209,7 @@ input {
     right: 0;
     width: 3px;
     height: 20px;
-    background-color: var(--third-color);
+    background-color: var(--primary-color);
   }
 }
 .iconic-input {
@@ -266,7 +271,7 @@ input {
 .react-datepicker__year-text--selected,
 .react-datepicker__year-text--in-selecting-range,
 .react-datepicker__year-text--in-range {
-  background-color: var(--third-color);
+  background-color: var(--primary-color);
 }
 
 .switch {
@@ -353,6 +358,25 @@ body {
 }
 
 .rdt_Table {
+  background-color: var(--light-color) !important;
+  .rdt_TableHeadRow {
+    background-color: var(--light-color) !important;
+  }
+  .rdt_TableRow {
+    background-color: var(--light-color) !important;
+    &:not(:last-of-type) {
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-bottom-color: var(--border-color);
+    }
+    &:hover {
+      background-color: var(--bg-color) !important;
+      border-bottom-color: var(--light-color);
+      outline-style: solid;
+      outline-width: 1px;
+      outline-color: var(--light-color);
+    }
+  }
   .rdt_TableCell {
     .actions-wrapper {
       width: 100%;
@@ -367,7 +391,7 @@ body {
         white-space: nowrap;
         height: 32px;
         &.btn-main {
-          background-color: #ecf5fa;
+          background-color: var(--add-btn-bg-color);
           border: 1px solid #93d2f4;
           padding: 0 12px;
           &:hover {
@@ -375,11 +399,11 @@ body {
           }
         }
         &.done {
-          background-color: #dedef5;
-          border: 1px solid #a2a2c3;
+          background-color: var(--btn-don-bg);
+          border: 1px solid var(--btn-don-border);
           padding: 0 12px;
           &:hover {
-            border-color: rgba(#a2a2c3, 0.2);
+            border-color: transparent;
           }
         }
         &:hover {
@@ -410,14 +434,28 @@ body {
         }
       }
     }
-    .inspc_name_wrapper{
-      p{
+    .inspc_name_wrapper {
+      p {
         margin: 0;
         font-weight: 600;
       }
-      span{
+      span {
         font-size: 12px;
         color: var(--text-color-light);
+      }
+    }
+  }
+}
+.rdt_Pagination {
+  background-color: var(--light-color) !important;
+  border-top-color: var(--border-color) !important;
+  button {
+    svg {
+      fill: var(--dark-color);
+    }
+    &[disabled] {
+      svg {
+        opacity: 0.3;
       }
     }
   }
@@ -432,4 +470,36 @@ body {
       min-width: 28px;
     }
   }
+}
+.themeTogglerDropdown {
+  .ant-dropdown-menu-item {
+    .icon {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg{
+        path{
+          stroke: var(--text-color);
+        }
+      }
+    }
+    &:hover{
+      background-color: var(--bg-color);
+    }
+  }
+}
+.theme-toggler .ant-dropdown-trigger {
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+  }
+}
+.ant-message-notice-content,
+.ant-dropdown-menu {
+  background-color: var(--light-color);
 }
