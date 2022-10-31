@@ -6,9 +6,9 @@ const themeReducer = (state: string, action: ActionType) => {
   switch (action.type) {
     case THEME_CHECK:
       const _theme = !!localStorage.getItem(THEME_TKN)
-        ? localStorage.getItem(THEME_TKN)!.toLowerCase()
+        ? localStorage.getItem(THEME_TKN)!
         : "Light";
-      document.documentElement.setAttribute("theme", _theme);
+      document.documentElement.setAttribute("theme", _theme.toLowerCase());
       localStorage.setItem(THEME_TKN, _theme);
       return _theme;
 

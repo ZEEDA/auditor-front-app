@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "./contexts";
 import RootRouter from "./routes";
 
-import { AUTH_CHECK } from "./utils/strings";
+import { AUTH_CHECK, THEME_CHECK } from "./utils/strings";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -13,6 +13,7 @@ function App() {
 
   useEffect(() => {
     dispatch({ type: AUTH_CHECK });
+    dispatch({ type: THEME_CHECK });
   }, []);
 
   useEffect(() => {

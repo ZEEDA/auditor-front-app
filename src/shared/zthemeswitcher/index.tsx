@@ -125,7 +125,7 @@ const ZThemeSwitcher = (props: Props) => {
   const [currentTheme, setcurrentTheme] = useState(initialTheme);
 
   useEffect(() => {
-    dispatch({ type: THEME_CHECK });
+    // dispatch({ type: THEME_CHECK });
   }, []);
 
   useEffect(() => {

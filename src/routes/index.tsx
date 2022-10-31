@@ -7,6 +7,7 @@ import RegisterPage from "../pages/Auth/Register";
 import HomePage from "../pages/Home";
 import InspectionsPage from "../pages/Inspections/index";
 import NotificationsPage from "../pages/Notifications";
+import SchadualePage from "../pages/schaduale";
 import TemplatesPage from "../pages/Templates";
 import AddTemplate from "../pages/Templates/add";
 import ProtectedRoute from "./protected-routes";
@@ -50,6 +51,14 @@ const RootRouter: React.FC<Props> = ({ auth }) => {
             element={
               <LayoutAside>
                 <InspectionsPage />
+              </LayoutAside>
+            }
+          />
+          <Route
+            path="schaduale"
+            element={
+              <LayoutAside>
+                <SchadualePage />
               </LayoutAside>
             }
           />

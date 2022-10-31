@@ -503,3 +503,38 @@ body {
 .ant-dropdown-menu {
   background-color: var(--light-color);
 }
+
+.pdfViewer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  .pdfDoc{
+    display: flex;
+    justify-content: center;
+    .pdfPage{
+      display: inline-block;
+      canvas{
+        max-height: calc(100vh - 180px);
+        width: auto!important;
+      }
+      .react-pdf__Page__textContent, .react-pdf__Page__annotations{
+        display: none;
+      }
+    }
+  }
+  .pdfFooter{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .pages{
+      font-size: 12px;
+    }
+    .btn{
+      padding: 4px 12px;
+      height: 34px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}
